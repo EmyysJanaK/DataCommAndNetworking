@@ -1,0 +1,3 @@
+C:/Users/janak/CLionProjects/SEM3/Lab2_PCM/cmake-build-debug/CMakeFiles/Lab2_PCM.dir
+C:/Users/janak/CLionProjects/SEM3/Lab2_PCM/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/janak/CLionProjects/SEM3/Lab2_PCM/cmake-build-debug/CMakeFiles/rebuild_cache.dir
