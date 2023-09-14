@@ -8,12 +8,27 @@ void run(asignal * inputsignal);
 
 extern int count,amplitude,levels;
 
+/**
+ * Generates an analog signal.
+ *
+ * @param signal The signal to generate.
+ * @param t The time at which to generate the signal.
+ * @return The value of the signal at time t.
+ */
 float analog_signal_generator(asignal signal, int t)
 {
     //TODO
     float sinVal = sin(signal.omega * t + signal.sigma);
     return signal.A*sinVal;
 }
+
+/**
+ * Samples an analog signal.
+ *
+ * @param samples The array to store the sampled values.
+ * @param interval The sampling interval.
+ * @param signal The analog signal to sample.
+ */
 void sampler(float *samples, int interval, asignal signal)
 {
     //TODO
@@ -21,6 +36,14 @@ void sampler(float *samples, int interval, asignal signal)
         samples[i] = analog_signal_generator(signal,i*interval);
     }
 }
+
+/**
+ * Quantizes a sampled signal.
+ *
+ * @param samples The array of sampled values.
+ * @param pcmpulses The array to store the quantized values.
+ * @param levels The number of quantization levels.
+ */
 void quantizer1(float *samples, int *pcmpulses, int levels)
 {
     //TODO
@@ -30,6 +53,13 @@ void quantizer1(float *samples, int *pcmpulses, int levels)
 
 }
 
+/**
+ * Encodes a quantized signal.
+ *
+ * @param pcmpulses The array of quantized values.
+ * @param dsignal The array to store the encoded signal.
+ * @param encoderbits The number of bits per encoded symbol.
+ */
 void encoder(int *pcmpulses, int *dsignal, int encoderbits)
 {
     //TODO
@@ -51,6 +81,9 @@ void encoder(int *pcmpulses, int *dsignal, int encoderbits)
 
 int count, amplitude, levels;
 
+/**
+ * The main function.
+ */
 int main()
 {
     asignal * inputsignal = (asignal *) malloc(sizeof(asignal));
@@ -62,6 +95,11 @@ int main()
 	return 0;
 }
 
+/**
+ * Runs the program.
+ *
+ * @param inputsignal The input signal.
+ */
 void run(asignal * inputsignal) 
 {
 	//todo
